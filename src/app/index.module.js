@@ -11,16 +11,17 @@ import { WebDevTecService } from '../app/components/webDevTec/webDevTec.service'
 import { NavbarDirective } from '../app/components/navbar/navbar.directive';
 import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive';
 
-angular.module('myPost', ['ui.router', 'ui.bootstrap', 'toastr'])
-  .constant('malarkey', malarkey)
-  .constant('moment', moment)
-  .config(config)
-  .config(routerConfig)
-  .run(runBlock)
-  .service('githubContributor', GithubContributorService)
-  .service('webDevTec', WebDevTecService)
-  .controller('MainController', MainController)
-  .controller('AuthController', AuthController)
-  .directive('acmeNavbar', NavbarDirective)
-  .directive('acmeMalarkey', MalarkeyDirective)
-  .directive('compareTo', CompareToDirective);
+angular.module('myPost', ['ui.router', 'ui.bootstrap', 'toastr', 'satellizer'])
+    .constant('API_URL', 'http://localhost:5000/')
+    .constant('malarkey', malarkey)
+    .constant('moment', moment)
+    .config(config)
+    .config(routerConfig)
+    .run(runBlock)
+    .service('githubContributor', GithubContributorService)
+    .service('webDevTec', WebDevTecService)
+    .controller('MainController', MainController)
+    .controller('AuthController', AuthController)
+    .directive('acmeNavbar', NavbarDirective)
+    .directive('acmeMalarkey', MalarkeyDirective)
+    .directive('compareTo', CompareToDirective);
